@@ -2,7 +2,7 @@
 
  *Expense tracker written with React, HTML and CSS* <br>
 
- Check out the app [here](https://sarahtarablus.github.io/expense-tracker-react/) 
+ Check out the app [here](https://an-expense-tracker.herokuapp.com/) 
 
 ### Expense Tracker React
 ![expenseTracker](ExpenseTrackerReact.png) 

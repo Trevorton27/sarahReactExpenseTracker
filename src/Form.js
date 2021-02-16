@@ -82,7 +82,6 @@ class Form extends Component {
           max="2040-12-31"/>
           <Input inputRef={a => this.inputAmount = a} label="Amount:" type="number" placeholder="$"/>
           <Input inputRef={a => this.inputLocation = a} label="Location:" type="text" placeholder="Location"/>
-         
           <div className="d-flex justify-content-center">
            <Button value="Add Expense"/>
           </div>
@@ -90,9 +89,10 @@ class Form extends Component {
        </div>
       </div>
      <div>
-        <div className="w-50 mx-auto">
+     <div>
+      <table className="table d-flex justify-content-center mx-auto">
        <ExpenseTable value={this.state.expenses.map((ex, index) => {
-      return (
+         return (
         <tr key={index}>
           <td>{ex.name}</td>
           <td>{ex.date}</td>
@@ -101,13 +101,15 @@ class Form extends Component {
           <DeleteButton onClick={this.deleteExpense}/>
         </tr>
       )})}/>
-       </div>
-       <div className="d-flex justify-content-center m-5">
-        <Button value="Show Old Expenses" onClick={this.showExpensesSaved}/>
-       </div>
-       <div className="w-50 mx-auto">
-       <ExpenseTable value={this.state.expensesSaved.map((ex, index) => {
-      return (
+      </table>
+     </div>
+     <div className="d-flex justify-content-center m-5">
+       <Button value="Show Old Expenses" onClick={this.showExpensesSaved}/>
+     </div>
+     <div>
+      <table className="table d-flex justify-content-center mx-auto">
+       <ExpenseTable display="d-none" value={this.state.expensesSaved.map((ex,   index) => {
+       return (
         <tr key={index}>
           <td>{ex.name}</td>
           <td>{ex.date}</td>
@@ -116,9 +118,10 @@ class Form extends Component {
           <DeleteButton onClick={this.deleteExpense}/>
         </tr>
       )})}/>
-       </div>
+      </table>
      </div>
     </div>
+   </div>
   )
  }
 }

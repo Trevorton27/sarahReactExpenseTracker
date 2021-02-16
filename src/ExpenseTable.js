@@ -5,9 +5,8 @@ class ExpenseTable extends Component {
   render() {
     return(
       <div>
-        <table className="table">
           <thead className="bg-success text-white">
-            <tr>
+            <tr className={this.props.display}>
             <th>NAME</th>
             <th>DATE</th>
             <th>LOCATION</th>
@@ -17,7 +16,6 @@ class ExpenseTable extends Component {
           <tbody className="bg-light">
           {this.props.value}
           </tbody>
-        </table>
       </div>
     )
   }
