@@ -5,7 +5,7 @@
  Check out the app [here](https://an-expense-tracker.herokuapp.com/) 
 
 ### Expense Tracker React
-![expenseTracker](ExpenseTrackerReact.png) 
+![expenseTracker](expense-tracker-react/src/images/expenseTrackerReact.png) 
 
 ## Summary
 This app is written using React, HTML and CSS. In the process I learned how to use react and bootstrap 4.
