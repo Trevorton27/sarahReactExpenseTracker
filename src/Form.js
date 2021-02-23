@@ -17,7 +17,7 @@ class Form extends Component {
     this.deleteExpense = this.deleteExpense.bind(this);
     this.setExpensesToLocalStorage = this.setExpensesToLocalStorage.bind(this);
     this.showExpensesSaved= this.showExpensesSaved.bind(this);
-  
+
   }
 
 
@@ -34,10 +34,15 @@ class Form extends Component {
       }
       let expenses = this.state.expenses
       expenses.unshift(exp)
+      let index = -1
+      for(let i = 0; i < expenses.length; i++){
+        expenses[i].index = i
+      }
       this.setState({
         expenses : expenses
       })
       this.setExpensesToLocalStorage()
+      console.log(this.state.expenses)
     }
   this.inputName.value = "";
   this.inputDate.value = "";
@@ -47,11 +52,12 @@ class Form extends Component {
 
 
 
-  deleteExpense(e) {
-    e.preventDefault();
-    if(e.target.className === "btn btn-danger text-white"){
-      e.target.parentElement.parentElement.remove()
-    }
+  deleteExpense(i) {
+    const {expenses} = this.state;
+    expenses.splice(i, 1);
+    this.setState({expenses})
+    console.log(this.state.expenses)
+    this.setExpensesToLocalStorage()
   }
 
 
@@ -66,7 +72,6 @@ class Form extends Component {
     const parsedExpenses = JSON.parse(expenses);
     this.setState({
       expensesSaved: parsedExpenses});
-    console.log(this.state.expensesSaved)
   }
 
 
@@ -91,14 +96,15 @@ class Form extends Component {
      <div>
      <div>
       <table className="table d-flex justify-content-center mx-auto">
-       <ExpenseTable value={this.state.expenses.map((ex, index) => {
+       <ExpenseTable value={this.state.expenses.map((ex, i) => {
          return (
-        <tr key={index}>
+        <tr key={i}>
+          <td>{ex.i}</td>
           <td>{ex.name}</td>
           <td>{ex.date}</td>
           <td>${ex.amount}</td> 
           <td>{ex.location}</td>
-          <DeleteButton onClick={this.deleteExpense}/>
+          <DeleteButton onClick={this.deleteExpense.bind(this, i)}/>
         </tr>
       )})}/>
       </table>
