@@ -1,6 +1,5 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import ExpenseTracker from "./ExpenseTracker.js";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App.js';
 
-
-ReactDOM.render(<ExpenseTracker />, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById('root'));
