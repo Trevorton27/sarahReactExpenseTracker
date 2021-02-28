@@ -5,7 +5,10 @@ const ExpenseTable = (props) => {
   const expenses = props.expenses;
   return (
     <div>
-      <table className='table d-flex justify-content-center mx-auto'>
+      <table
+        className='table justify-content-center mx-auto'
+        style={{ width: '520px', textAlign: 'center' }}
+      >
         <thead className='bg-success text-white'>
           <tr>
             <th>NAME</th>
@@ -22,9 +25,17 @@ const ExpenseTable = (props) => {
                 <td>{expense.date}</td>
                 <td>{expense.amount}</td>
                 <td>{expense.location}</td>
-                <DeleteButton
-                  onClick={(e) => props.deleteExpense(expense.id)}
-                />
+                <td
+                  style={{
+                    backgroundColor: '#fff',
+                    marginTop: '5px',
+                    border: 'none'
+                  }}
+                >
+                  <DeleteButton
+                    onClick={(e) => props.deleteExpense(expense.id)}
+                  />
+                </td>
               </tr>
             );
           })}

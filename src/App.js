@@ -80,10 +80,10 @@ class App extends Component {
         <Form
           addExpense={this.addExpense}
           handleChange={this.handleChange}
-          name={this.state.nameInput}
-          location={this.state.locationInput}
-          date={this.state.dateInput}
-          amount={this.state.amountInput}
+          nameInput={this.state.nameInput}
+          locationInput={this.state.locationInput}
+          dateInput={this.state.dateInput}
+          amountInput={this.state.amountInput}
         />
         <ExpenseTable
           expenses={this.state.expenses}

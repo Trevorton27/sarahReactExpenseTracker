@@ -1,10 +1,17 @@
-import React, {Component} from "react";
+import React, { Component } from 'react';
 
 class Button extends Component {
-  render () {
+  render() {
     return (
-      <button onClick={this.props.onClick} type="submit" className="mt-5 p-2 btn btn-success">{this.props.value}</button>
-    )
+      <button
+        onClick={this.props.onClick}
+        type='submit'
+        className=' btn btn-success'
+        style={{ marginLeft: '.6em' }}
+      >
+        {this.props.value}
+      </button>
+    );
   }
 }
 
