@@ -5,8 +5,16 @@ import Button from './Button.js';
 
 const Form = (props) => {
   const inputStyle = {
-    maxHeight: '3.5em'
+    maxHeight: '3.5em',
+    marginLeft: '1em',
+    marginRight: '1em'
   };
+
+  const lableStyle = {
+    paddingTop: '5px',
+    fontSize: '1.2em'
+  };
+
   return (
     <div style={{ height: '300px', marginTop: '10em' }}>
       <div className='h-75 d-flex justify-content-center'>
@@ -15,6 +23,7 @@ const Form = (props) => {
             className='form d-flex justify-content-center m-5 text-success'
             onSubmit={props.addExpense}
           >
+            <label style={lableStyle}>Name:</label>
             <input
               style={inputStyle}
               className='formInput'
@@ -26,6 +35,7 @@ const Form = (props) => {
               onChange={props.handleChange}
               required
             />
+            <label style={lableStyle}>Date:</label>
             <input
               style={inputStyle}
               label='Date:'
@@ -38,6 +48,7 @@ const Form = (props) => {
               onChange={props.handleChange}
               required
             />
+            <label style={lableStyle}>Amount:</label>
             <input
               style={inputStyle}
               label='Amount:'
@@ -48,6 +59,7 @@ const Form = (props) => {
               onChange={props.handleChange}
               required
             />
+            <label style={lableStyle}>Location:</label>
             <input
               style={inputStyle}
               label='Location:'
